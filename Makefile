@@ -1,8 +1,8 @@
 CXX = g++
-CFLAGS = -Wall -Wextra -Werror -pedantic -ggdb
+CFLAGS = -Wall -Wextra -Werror -pedantic -ggdb -fsanitize=address,undefined
 STD = -std=c++17
 SOURCES = $(wildcard src/*.cpp)
-INCLUDE = $(wildcard include/*.hpp)
+INCLUDE = $(shell find  include)
 EXE = graph
 ifdef SAN
 	CFLAGS += -fsanitize=address,undefined

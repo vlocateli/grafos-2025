@@ -1,11 +1,10 @@
-#include "../include/graph.hpp"
-
+#include "../include/parser/parser.hpp"
+#include "../include/graph/graph.hpp"
 int main ()
 {
+    Parser p("dummy.txt");
+    p.parse_file();
+    auto buff = p.buff();
     Graph<int> g;
-    g.add_edge(1,2);
-    g.add_edge(2,3);
-    g.add_edge(1,3);
-    g.add_edge(1,1);
-    std::cout << g;
+    g.read_from(buff);
 }
