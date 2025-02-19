@@ -3,7 +3,7 @@ CFLAGS = -Wall -Wextra -Werror -pedantic -ggdb -fsanitize=address,undefined
 STD = -std=c++17
 SOURCES = $(wildcard src/*.cpp)
 INCLUDE = $(shell find  include)
-EXE = graph
+EXE = graph.bin
 ifdef SAN
 	CFLAGS += -fsanitize=address,undefined
 else
